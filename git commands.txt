@@ -1,0 +1,58 @@
+echo "# myfirstpushcode" >> README.md
+git init
+git add README.md
+git add *
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/gaurav061120/myfirstpushcode.git
+git push -u origin main
+
+
+
+
+changes in code 
+git add .
+git commit -m "Feature:1234-alarm feature added"
+git push 
+
+
+https://github.com/CloudDevOpsHub/batch-40/blob/main/jenkinsubuntu  
+
+https://github.com/CloudDevOpsHub/batch-40/blob/main/jenkinspipeline
+
+http://34.31.244.219:8080/user/admin/ 
+
+
+Below is today practical  steps if anyone want to refer :
+step 1)  we have created hellowolrd.java file in IDE
+ 
+ compile it with "javac hellowolrd.java" then it will creeate helloworld.class file which has byte code 
+ 
+ and then run the it with "java hellowolrd"
+ 
+
+step 2) add this helloword.java file in git
+
+commit -m "added the hello word file for Jenkins demo"
+ git remote add origin https://github.com/prajktakale/myfirstpractialfromlocaltorepo
+ git push -u origin main
+ 
+step 3) on jenkins click on new item--> select freestyle project --> click on save and create 
+        In configuration add the git repository
+         add the git repository URL : https://github.com/prajktakale/myfirstpractialfromlocaltorepo
+             (https://github.com/DevSecOpsG/helloworldsimplejavaprogram -- this is given by sir)
+			 
+step 4) then click on save and build it will success
+
+step 5) In configuration only click on build steps and then select execute shell
+        javac helloworld.java
+		java helloworld
+	Note : Make sure your class name and script name is same or test it before by running on Visual studio code
+
+step 6) then click on save and build it, it build successfully
+
+step 7) In configuration now change the Triggers select Poll SCM and then enter * * * * * (it will run all the time refer crontab) and save
+
+step 8) Now change the helloword.java file and push it again (you will require to repeat  step 2) or just make changes in the code by going to repo and make a commit 
+ 
+step 9) on Jenkins now you can see automatic build get triggered
