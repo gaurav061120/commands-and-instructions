@@ -1,0 +1,46 @@
+sudo -i
+apt-get update
+apt  install docker.io
+docker --version 
+
+creating and running nginx image
+docker pull nginx 
+docker run -p 80:80 nginx
+
+
+
+
+
+🔹 Build (Artifact banana)
+
+Jab hum build karte hain, toh code + dependencies ko ek artifact (like .jar, .war, .zip, etc.) mein package kar dete hain.
+
+Ye sirf application ka code + libraries hota hai, environment (OS, runtime, tools) uske andar nahi hota.
+
+Matlab agar tu .jar file banata hai toh usse run karne ke liye system pe Java installed hona chahiye.
+
+Example:
+
+Java project build kiya → helloworld.jar bana.
+
+Run karne ke liye system pe java -jar helloworld.jar chalana padega → Java environment zaroori hai.
+
+🔹 Containerization (Docker image banana)
+
+Jab hum containerize karte hain, toh hum application + dependencies + runtime + environment sab kuch ek image mein pack kar dete hain.
+
+Matlab tu Docker image banaega toh usme OS base image (like Ubuntu/Alpine) + runtime (Java/Python/Node.js) + tera app + dependencies sab hoga.
+
+Iska fayda → kisi bhi machine pe Docker install hai toh image run ho jayega, chahe wahan Java/Python installed ho ya na ho.
+
+Example:
+
+Tu apne helloworld.jar ko Docker image mein daalega with Java runtime.
+
+Fir image ko kisi bhi system pe run kar → chalega bina Java install kiye.
+
+🔑 Simple Difference
+
+Build → Code + Dependencies (artifact)
+
+Containerization → Code + Dependencies + Runtime + Environment (docker image)

@@ -1,0 +1,27 @@
+sudo -i
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh  
+
+
+
+
+
+docker pull vikas4cloud/mynginxbatch40 
+
+vi Dockerfile
+
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install nginx -y
+CMD [“echo”,”Image created”]
+
+
+docker build -t mynginxbatch40 .
+docker tag 359662fbec32 gaurav0611/gauravnginximg:latest
+docker tag c8955b2faaaf yourusername/mynginxbatch40:latest
+
+
+
+
+
+A Dockerfile is a plain text document that contains a set of instructions used to build a Docker image.
