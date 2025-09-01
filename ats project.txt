@@ -1,0 +1,26 @@
+ATS PROJECT 
+
+1)Installation :
+sudo apt update && sudo apt install python3 python3-pip python3-venv -y
+sudo apt install git -y
+sudo apt install poppler-utils -y
+
+2)Downloading the code :
+git clone https://github.com/CloudDevopsHub/Application-Tracking-System
+
+3)Setting the environment :
+python3 -m venv venv
+source venv/bin/activate
+
+4)Installing Dependencies :
+pip install --upgrade pip
+pip install -r requirements.txt
+pip install google-generativeai
+
+
+Generate a api key from gcp , gemini api enabled 
+5)Secret.toml file 
+GOOGLE_API_KEY = "Your key here"
+
+6)Running app: 
+streamlit run app.py --server.port 8501 --server.enableCORS false
