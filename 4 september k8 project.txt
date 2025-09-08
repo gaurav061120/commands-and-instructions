@@ -1,0 +1,67 @@
+
+then run this : kubectl apply -f kubernetes-manifests.yaml 
+
+if any service goes down it will not affect entire application. and we can recover it easily 
+
+ 
+
+https://github.com/GoogleCloudPlatform/microservices-demo/tree/main 
+
+Ingress manages how external users access services running inside the cluster, typically over HTTP and HTTPS.
+
+
+Ingress is like a gatekeeper for Kubernetes.
+
+It lets outside traffic (like users from the internet) reach your applications running inside the Kubernetes cluster.
+
+Instead of exposing every service separately, Ingress provides one entry point (usually an Ingress Controller) and decides:
+
+which app to send the request to,
+
+based on the URL, host, or rules.
+
+
+Based on the meeting transcript, I'll provide a detailed overview of the project deployment and commands used:
+Project Deployment Process
+Cluster Creation
+First, a Kubernetes cluster was created on Google Cloud:
+	1	Go to Google Cloud console
+	2	Navigate to Kubernetes Engine
+	3	Click Create, select Standard cluster
+	4	Configure with 3 nodes (1 node per zone)
+	5	Set node size (1 core, 8GB RAM was used)
+	6	Click Create
+Code Download
+git clone https://github.com/GoogleCloudPlatform/microservices-demo.git
+cd microservices-demo
+cd release
+Deployment Command :kubectl apply -f kubernetes-manifests.yaml
+The entire microservice application was deployed with a single command:
+kubectl apply -f kubernetes-manifests.yaml
+This command deployed all microservices including:
+	•	Frontend service
+	•	Cart service
+	•	Payment service
+	•	Email service
+	•	Currency service
+	•	Product service
+	•	Ad service
+	•	And others
+Verification Commands
+To verify deployment:
+kubectl get pods
+kubectl get deploy
+kubectl get svc
+Testing the Application
+To access the application:
+	1	Get the external IP from the frontend service:kubectl get svc
+	
+	2	Copy the external IP of the frontend service
+	3	Access it in a browser (remove 'https://' and use 'http://' if needed)
+Troubleshooting Commands
+If a pod fails:
+kubectl delete pod <pod-name>
+If a deployment is deleted:
+kubectl apply -f kubernetes-manifests.yaml
+This will recreate only the missing deployments without affecting running services.
+The project demonstrated microservice architecture benefits where individual services can fail without bringing down the entire application, and Kubernetes provides auto-healing capabilities to restore failed components.
